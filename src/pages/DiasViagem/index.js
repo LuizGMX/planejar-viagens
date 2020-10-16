@@ -1,11 +1,10 @@
-import React from 'react';
-import { StyleSheet, ScrollView, Text, View, Dimensions } from 'react-native';
+import React, { useEffect } from 'react';
+import { StyleSheet, ScrollView, Text, View, Dimensions, AsyncStorage } from 'react-native';
 import { Icon } from 'react-native-elements';
 
-
-const windowHeight = Dimensions.get('window').height;
-
 export default function DiasViagem({ route, navigation }) {
+
+
 
   return (
 
@@ -23,11 +22,11 @@ export default function DiasViagem({ route, navigation }) {
       <View style={styles.containerNomeDaViagem}>
 
         <Text style={styles.nomeDaViagem}>
-          {'Viagem para ' + route.params.nomeViagem}          
+          {'Viagem para ' + route.params.nomeViagem}
         </Text>
 
         <Text style={styles.dataDaViagem}>
-         {route.params.dataViagem}
+          {route.params.dataViagem}
         </Text>
 
       </View>
@@ -44,6 +43,8 @@ export default function DiasViagem({ route, navigation }) {
     </ScrollView>
   );
 }
+
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
 
@@ -72,7 +73,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
     marginLeft: 15
   },
-  
+
   iconAdd: {
     flex: 1,
     flexDirection: "column",
